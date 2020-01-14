@@ -1,0 +1,26 @@
+<section>
+    <article *ngFor="let post of posts, let i=index">
+        <div class="blog-image"><img src="{{post.image}}"></div>
+        <div class="blog-text">
+            <div class="blog_text_inner">
+                <a class="cat" href="#">{{post.category.name}}</a>
+                <a [routerLink]="['/blog', post.slug]"><h4>{{post.title}}</h4></a>
+                <div class="blog-p" [innerHTML]="post.mini_text"></div>
+                <div class="date">
+                    <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>
+                        {{post.published_date}}
+                    </a>
+                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>
+                        {{post.comments_count}}
+                    </a>
+                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>
+                        {{post.viewed}}
+                    </a>
+                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>
+                        {{post.author}}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>

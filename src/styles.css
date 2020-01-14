@@ -1,1 +1,113 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-display: swap;
+    font-weight: 100;
+    src: local("IBM"), local("IBM"), url(./assets/fonts/IBM_Plex_Sans/IBMPlexSans-Regular.ttf) format("ttf");
+}
+
+:root {
+    --nav-color: #222437;
+    --count: #3E4551;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F9F9F9;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+/* Убираем внешние отступы */
+h1, h2, h3, h4, p, ul[class], ol[class], li, figure, figcaption, blockquote, dl, dd {
+    margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class], ol[class] {
+    list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+/*a:not([class]) {*/
+/*    text-decoration: none;*/
+/*    color: #465d81;*/
+/*}*/
+a {
+    text-decoration: none;
+    color: #465d81;
+}
+
+/* Упрощаем работу с изображениями */
+/*img {*/
+/*  max-width: 100%;*/
+/*  display: block;*/
+/*}*/
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+    margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+.main-full {
+    display: grid;
+    grid-area: main;
+
+}
+
+.main {
+    display: grid;
+    /*grid-template-columns: minmax(0, 240px) repeat(auto-fill, minmax(320px, 1fr)) minmax(0, 240px);*/
+    grid-template-columns: minmax(0, 240px) 3fr minmax(0, 240px);
+    grid-area: main;
+}
+
+.wrapper {
+    display: grid;
+    /*grid-template-areas: "nav nav nav" ". main ." "footer footer footer";*/
+    grid-template-areas: "nav nav nav" "main main main" "footer footer footer";
+    grid-template-rows: 60px 1fr 170px;
+    grid-template-columns: minmax(0, 240px) repeat(auto-fill, minmax(320px, 1fr)) minmax(0, 240px);
+    /*grid-template-columns: auto minmax(320px, 1050px) auto;*/
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+}
+
+

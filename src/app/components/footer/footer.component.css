@@ -1,0 +1,41 @@
+footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    background-color: var(--nav-color);
+    color: #fff;
+}
+
+.footer-logo {
+    opacity: 0.1;
+}
+
+.github, .vk {
+    color: #fff;
+    width: 21px;
+    height: 21px;
+}
+
+.youtube {
+    color: #fff;
+    width: 24px;
+    height: 21px;
+    margin: 0 25px 0 25px;
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        grid-template-columns: 1fr;
+        grid-row-gap: 15px;
+        padding: 15px 0 0 0;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .footer-logo {
+        width: 90%;
+        padding: 0 0 0 10px;
+    }
+}

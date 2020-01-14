@@ -1,0 +1,40 @@
+<section class="top-blog">
+    <div class="top-post" *ngFor="let post of postsTop, let i=index">
+        <div *ngIf="i < 4">
+            <img class="top-post-image" src="{{post.image}}">
+            <div class="post_text">
+                <a class="cat" href="">{{post.category.name}}</a>
+                <a href="{{post.link}}"><h4>{{post.title}}</h4></a>
+                <div class="text" [innerHTML]="post.mini_text"></div>
+                <div class="date">{{post.published_date}}</div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="main">
+    <div class="sidebar">
+        <div class="sidebar-section author">
+            <div class="author-image"><img src="../../../assets/img/blog/my-ava2.jpg" alt="DJWOMS">
+            </div>
+
+            <ul class="social-icons">
+                <li><a href="#"><i class="ion-social-twitter-outline"></i>t</a></li>
+                <li><a href="#"><i class="ion-social-instagram-outline"></i>i</a></li>
+                <li><a href="#"><i class="ion-social-youtube-outline"></i>y</a></li>
+            </ul>
+            <h4 class="author-name"><b class="light-color">DJWOMS</b></h4>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                dolore magnam aliquam quaerat voluptatem.</p>
+        </div>
+        <div class="sidebar-section src-area">
+            <form action="" method="get">
+                <input class="src-input" type="text" placeholder="Search">
+                <button class="src-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="content">
+        <router-outlet style="display: none;"></router-outlet>
+    </div>
+</section>
+
