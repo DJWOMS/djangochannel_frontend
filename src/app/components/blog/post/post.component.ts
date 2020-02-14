@@ -9,13 +9,13 @@ import {ApiService} from '../../../api.service';
 })
 export class PostComponent implements OnInit {
     post: object;
-    params: object
+    params: object;
     constructor(private http: ApiService, private res: ActivatedRoute) {
         res.params.subscribe(param => this.params = param);
     }
 
      ngOnInit() {
-        this.http.getBlogPost(this.params.slug).subscribe((response) => {
+        this.http.getBlogPost(this.params).subscribe((response) => {
             this.post = response;
         });
     }

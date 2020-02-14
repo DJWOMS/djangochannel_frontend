@@ -7,18 +7,18 @@
                 <a [routerLink]="['/blog', post.slug]"><h4>{{post.title}}</h4></a>
                 <div class="blog-p" [innerHTML]="post.mini_text"></div>
                 <div class="date">
-                    <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>
+                    <span><img class="icon" src="../../../../assets/icon/calendar.svg">
                         {{post.published_date}}
-                    </a>
-                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>
+                    </span>
+                    <span><img class="icon icon-comment" src="../../../../assets/icon/comment.svg">
                         {{post.comments_count}}
-                    </a>
-                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>
+                    </span>
+                    <span><img class="icon icon-comment" src="../../../../assets/icon/eye.svg">
                         {{post.viewed}}
-                    </a>
-                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>
+                    </span>
+                    <span>
                         {{post.author}}
-                    </a>
+                    </span>
                 </div>
             </div>
         </div>

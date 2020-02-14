@@ -3,10 +3,12 @@
         <div *ngIf="i < 4">
             <img class="top-post-image" src="{{post.image}}">
             <div class="post_text">
-                <a class="cat" href="">{{post.category.name}}</a>
-                <a href="{{post.link}}"><h4>{{post.title}}</h4></a>
+                <a [routerLink]="['/blog', post.slug]"><h4>{{post.title}}</h4></a>
                 <div class="text" [innerHTML]="post.mini_text"></div>
-                <div class="date">{{post.published_date}}</div>
+                <div class="date">
+                    {{post.published_date}}
+                    <a class="link" href="">{{post.category.name}}</a>
+                </div>
             </div>
         </div>
     </div>
@@ -18,9 +20,9 @@
             </div>
 
             <ul class="social-icons">
-                <li><a href="#"><i class="ion-social-twitter-outline"></i>t</a></li>
-                <li><a href="#"><i class="ion-social-instagram-outline"></i>i</a></li>
-                <li><a href="#"><i class="ion-social-youtube-outline"></i>y</a></li>
+                <li><a href="#"><img src="../../../assets/icon/icon-twitter.svg" alt="DJWOMS"></a></li>
+                <li><a href="#"><img src="../../../assets/icon/icon-instagram.svg" alt="DJWOMS"></a></li>
+                <li><a href="#"><img src="../../../assets/icon/icon-youtube.svg" alt="DJWOMS"></a></li>
             </ul>
             <h4 class="author-name"><b class="light-color">DJWOMS</b></h4>
             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
@@ -28,9 +30,22 @@
         </div>
         <div class="sidebar-section src-area">
             <form action="" method="get">
-                <input class="src-input" type="text" placeholder="Search">
-                <button class="src-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
+                <input class="src-input" type="text" placeholder="Поиск">
+                <a class="src-btn" type="submit"><img src="../../../assets/icon/icon-search.svg"></a>
             </form>
+        </div>
+        <div class="sidebar-section nav-area">
+            <ul class="nav">
+                <li class="nav__item">
+                    <a href="#submenu" class="nav__item-link">Профиль
+                        <img class="icon icon-comment" src="../../../assets/icon/arrow-down.svg">
+                    </a>
+                    <div id="submenu" class="nav__submenu">
+                        <a href="#" class="nav__submenu-link">Посты</a>
+                        <a href="#" class="nav__submenu-link">Картинки</a>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="content">

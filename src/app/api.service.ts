@@ -15,8 +15,8 @@ export class ApiService {
         return this.http.get(this.blogUrl);
     }
 
-    getBlogPost(slug): Observable<any> {
-        return this.http.get(`${this.blogUrl}${slug}`);
+    getBlogPost(params): Observable<any> {
+        return this.http.get(`${this.blogUrl}${params.slug}`);
     }
 }
 

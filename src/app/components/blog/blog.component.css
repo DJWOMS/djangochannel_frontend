@@ -1,13 +1,15 @@
+
 .top-blog {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 595px;
     grid-column-gap: 0;
+    grid-gap: 3px;
 }
 
 .top-post {
     /*max-width: 478px;*/
-    max-height: 595px;
+    max-height: 380px;
+    /*max-height: max-content;*/
     position: relative;
     overflow: hidden;
 }
@@ -41,13 +43,30 @@
 
 .top-post .cat {
     display: inline-block;
-    border: 1px solid #585b75;
+    border: 1px solid #2224377a;
     line-height: 28px;
     padding: 0 18px;
     color: #fff;
     border-radius: 15px;
     font-size: 12px;
-    margin-bottom: 20px;
+}
+
+.link {
+    display: inline-block;
+    border: 1px solid #c0c0c063;
+    line-height: 28px;
+    padding: 0 18px;
+    color: #fff;
+    border-radius: 15px;
+    font-size: 12px;
+    margin-left: 120px;
+    backdrop-filter: blur(5px);
+    /*background: rgba(109, 107, 104, 0.32);*/
+}
+
+.link:hover {
+    backdrop-filter: blur(15px);
+
 }
 
 .top-post h4 {
@@ -87,7 +106,7 @@
 
 .content {
     grid-area: content;
-    margin: 0 0 0 30px;
+    margin: 0 75px 0 75px;
 }
 
 .sidebar {
@@ -102,6 +121,7 @@
 
 .author-image {
     max-width: 150px;
+    height: 180px;
     margin: 0 auto 20px;
     transform: translateY(-30px);
     border-radius: 3px;
@@ -127,16 +147,18 @@
     font-size: 1.05em;
     font-family: 'Maven Pro', sans-serif;
     font-weight: 400;
-    color: #555;
+    color: #000;
 }
 
 .src-area {
     line-height: 50px;
     position: relative;
+    box-shadow: 3px 4px 20px 0px #d8d8d8;
 }
 
 .sidebar-section {
     margin-bottom: 50px;
+    border-radius: 7px;
 }
 
 .src-area input {
@@ -146,19 +168,118 @@
     border: 0;
     outline: 0;
     border-bottom: 1px solid #bbb;
+    border-radius: 7px;
     background-color: #f9f9f9;
+    box-shadow: 3px 4px 20px 0px #d8d8d8;
 }
 
 .src-area .src-btn {
     position: absolute;
-    top: 0;
+    top: 8px;
     right: 20px;
     height: 50px;
+    cursor: pointer;
 }
 
-.ion-ios-search-strong:before {
-    content: "\f4a4";
+
+
+ul {
+    list-style-type: none;
 }
+
+.nav-area {
+    /*position: relative;*/
+    /*border-radius: 7px;*/
+    box-shadow: 3px 4px 20px 0px #d8d8d8;
+}
+
+.nav {
+  width: 100%;
+  position: relative;
+  background-color: #333;
+  /*width: 360px;*/
+  border-radius: 7px;
+  overflow: hidden;
+  box-shadow: 3px 4px 20px 0px #d8d8d8;
+}
+
+.nav__item {
+  display: block;
+  border-top: 1px solid #ccc;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  background: #F9F9F9;
+  overflow: hidden;
+}
+
+.nav__item:hover {
+  background: #e3e3e3;
+}
+
+.nav__item-link {
+  color: #575757;
+  text-decoration: none;
+  padding: 16px 20px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav__item-link i {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.nav__submenu {
+  background: #f5f7f7;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 1s;
+}
+
+.nav__submenu:target {
+  max-height: 10rem;
+}
+
+.nav__submenu-link {
+  display: block;
+  padding: 10px 20px;
+  color: #2a2929;
+  text-decoration: none;
+  font-size: 15px;
+  transition: background 0.2s ease-in;
+  overflow: hidden;
+  border-top: 1px solid #ccc;
+}
+
+.nav__submenu a {
+  padding-left: 35px;
+}
+
+.nav__submenu-link:hover {
+  background: rgba(221, 221, 221, 0.71);
+  color: #000;
+}
+
+/*@media (max-width: 1080px) {*/
+/*    .nav__item-link i {*/
+/*        left: 925px;*/
+/*    }*/
+/*}*/
+
+/* .nav__submenu-link:before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background-color: #336;
+  position: absolute;
+  left: 25px;
+  top: 7px;
+  transform: rotate(45deg);
+} */
+
 @media screen and (max-width: 1024px) {
     .top-blog {
         display: grid;
@@ -166,15 +287,18 @@
         grid-template-rows: 350px 350px;
     }
 }
-@media screen and (max-width: 900px) {
+
+@media screen and (max-width: 1080px) {
     .main {
         margin: 15px 0 15px 0;
-        grid-template-areas: "sidebar" "content" ;
+        grid-template-areas: "sidebar" "content";
         grid-template-columns: 1fr;
     }
+
     .content {
-        margin: 5px;
+        margin: 50px;
     }
+
     .sidebar {
         margin: 50px;
     }

@@ -1,4 +1,96 @@
-<section class="s-content">
-    <h1>{{post.title}}</h1>
-    <div class="text" [innerHTML]="post.text"></div>
-</section>
+<div class="content">
+    <section class="s-content">
+        <div class="single-title"><h1>{{post.title}}</h1></div>
+        <div class="blog_text_inner">
+            <div class="date">
+                <span><img class="icon" src="../../../../assets/icon/calendar.svg">
+                    {{post.published_date}}
+                </span>
+                <span><img class="icon icon-comment" src="../../../../assets/icon/comment.svg">
+                    {{post.comments_count}}
+                </span>
+                <span><img class="icon icon-comment" src="../../../../assets/icon/eye.svg">
+                    {{post.viewed}}
+                </span>
+                <span>
+                    {{post.author}}
+                </span>
+            </div>
+        </div>
+        <div class="text" [innerHTML]="post.text"></div>
+    </section>
+    <!--    <div class="comments-content">-->
+    <!--        <div class="section-row">-->
+    <!--            <div class="section-title">-->
+    <!--                <h3 class="title">3 Comments</h3>-->
+    <!--            </div>-->
+    <!--            <div class="post-comments">-->
+    <!--                <div class="media">-->
+    <!--                    <div class="media-left">-->
+    <!--                        <img class="media-object" src="./assets/img/blog/my-ava2.jpg" alt="">-->
+    <!--                    </div>-->
+    <!--                    <div class="media-body">-->
+    <!--                        <div class="media-heading">-->
+    <!--                            <h4>John Doe</h4>-->
+    <!--                            <span class="time">5 min ago</span>-->
+    <!--                        </div>-->
+    <!--                        <p class="media-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit,-->
+    <!--                            sed do-->
+    <!--                            eiusmod-->
+    <!--                            tempor-->
+    <!--                            incididunt ut-->
+    <!--                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud-->
+    <!--                            exercitation-->
+    <!--                            ullamco-->
+    <!--                            laboris nisi ut aliquip ex ea commodo consequat.</p>-->
+    <!--                        <a href="#" class="reply">Reply</a>-->
+    <!--                        <div class="media media-author">-->
+    <!--                            <div class="media-left">-->
+    <!--                                <img class="media-object" src="./assets/img/blog/my-ava2.jpg"-->
+    <!--                                     alt="">-->
+    <!--                            </div>-->
+    <!--                            <div class="media-body">-->
+    <!--                                <div class="media-heading">-->
+    <!--                                    <h4>John Doe</h4>-->
+    <!--                                    <span class="time">5 min ago</span>-->
+    <!--                                </div>-->
+    <!--                                <p class="media-p">Lorem ipsum dolor sit amet, consectetur-->
+    <!--                                    adipisicing elit, sed-->
+    <!--                                    do-->
+    <!--                                    eiusmod tempor-->
+    <!--                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim-->
+    <!--                                    veniam, quis-->
+    <!--                                    nostrud-->
+    <!--                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo-->
+    <!--                                    consequat.</p>-->
+    <!--                                <a href="#" class="reply">Reply</a>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--                <div class="media">-->
+    <!--                    <div class="media-left">-->
+    <!--                        <img class="media-object" src="./assets/img/blog/my-ava2.jpg" alt="">-->
+    <!--                    </div>-->
+    <!--                    <div class="media-body">-->
+    <!--                        <div class="media-heading">-->
+    <!--                            <h4>John Doe</h4>-->
+    <!--                            <span class="time">5 min ago</span>-->
+    <!--                        </div>-->
+    <!--                        <p class="media-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit,-->
+    <!--                            sed do-->
+    <!--                            eiusmod-->
+    <!--                            tempor-->
+    <!--                            incididunt ut-->
+    <!--                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud-->
+    <!--                            exercitation-->
+    <!--                            ullamco-->
+    <!--                            laboris nisi ut aliquip ex ea commodo consequat.</p>-->
+    <!--                        <a href="#" class="reply">Reply</a>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+</div>
